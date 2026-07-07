@@ -1,0 +1,40 @@
+class Button {
+  
+  int textFill, buttonFillR, buttonFillG, buttonFillB, buttonXPos, buttonYPos, buttonSizeX, buttonSizeY;
+  String buttonText;
+  
+ Button() {
+
+   
+ }
+ 
+ Button(int x, int y, int sX, int sY, String txt) {
+ 
+   buttonXPos = x;
+   buttonYPos = y;
+   buttonSizeX = sX;
+   buttonSizeY = sY;
+   buttonFillR = 0;
+   buttonFillG = 255;
+   buttonFillB = 0;
+   textFill = 0;
+   
+   buttonText = txt;
+ }
+ 
+  void draw() { 
+    
+    fill(buttonFillR, buttonFillG, buttonFillB);
+    rect(buttonXPos, buttonYPos, buttonSizeX, buttonSizeY);
+    
+    fill(textFill);
+    textSize(40);
+    text(buttonText, buttonXPos + 60, buttonYPos + 60);
+    
+    
+    /*
+      TODO: 
+        Mouse Hover: Detect Mouse inside Button for button hover behavior.
+    */
+  } 
+}

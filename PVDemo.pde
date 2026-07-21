@@ -1,7 +1,10 @@
 
+  
 void setup () {
   
+
   // Init window
+  boolean loop = true;
   
   size(800, 600);
   frameRate(60);
@@ -19,6 +22,11 @@ void draw () {
 
 void mainMenu() {
 
+  
+
+  
+  
+  
   Button playButton = new Button(300, 250, 200, 100, "Play");
   Button quitButton = new Button(300, 355, 200, 100, "Quit");
 
@@ -32,14 +40,22 @@ void mainMenu() {
    
    // Test drawing rudimentary buttons and the placements
    //Centered
-   playButton.draw();
-   quitButton.draw();
-   
-   
+   while(loop) {
+     
+     playButton.draw();
+     quitButton.draw();
+   }
    
 }
 
-void play() {}
+void play() {
+  loop = false;
+  
+ 
+}
+
+
+
 void quit() {
   exit();
 }

@@ -25,18 +25,38 @@ class Button {
   void draw() { 
     
     fill(buttonFillR, buttonFillG, buttonFillB);
-    rect(buttonXPos, buttonYPos, buttonSizeX, buttonSizeY);
     
+  if(hover()) {
+  
+    fill(0, 128, 0);
+  }
+  
+  if(hover() && mousePressed) {
+  
+    fill(0,0,0);
+      
+    switch(buttonText) {
+      case "Quit":
+        exit();
+        break;
+      case "Play":
+        play();
+        break;
+    }
+  }
+    rect(buttonXPos, buttonYPos, buttonSizeX, buttonSizeY);
     fill(textFill);
     textSize(40);
     text(buttonText, buttonXPos + 60, buttonYPos + 60);
+
+  }
+  
+ boolean hover() {
+    boolean hover = false;
+
+    if (((mouseY > buttonYPos) && (mouseY < buttonYPos + buttonSizeY)) && ((mouseX < buttonXPos + buttonSizeX) && (mouseX > buttonXPos)))
     
-    
-    /*
-      TODO: 
-        Mouse Hover: Detect Mouse inside Button for button hover behavior.
-    */
-    
-    
-  } 
+      hover = true;
+      return hover;
+  }
 }

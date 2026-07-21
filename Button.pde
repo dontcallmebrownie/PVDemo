@@ -40,7 +40,7 @@ class Button {
         exit();
         break;
       case "Play":
-        play();
+        menuLoop = false;
         break;
     }
   }

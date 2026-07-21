@@ -1,32 +1,30 @@
 
-  
+boolean menuLoop = true; 
+
 void setup () {
-  
 
   // Init window
-  boolean loop = true;
-  
   size(800, 600);
   frameRate(60);
   background(127, 0, 127);
+  
+
 }
 
 void draw () {
   fill(0);
   
   //Main Menu instertion
-  mainMenu();
-  
-  // Main game loop?
+  if (menuLoop) {
+    mainMenu();
+  }
+  else
+    // Main game loop?
+    play();
 }
 
 void mainMenu() {
 
-  
-
-  
-  
-  
   Button playButton = new Button(300, 250, 200, 100, "Play");
   Button quitButton = new Button(300, 355, 200, 100, "Quit");
 
@@ -38,23 +36,22 @@ void mainMenu() {
   //  Main menu display and functions
    fill(0, 255, 0);
    
-   // Test drawing rudimentary buttons and the placements
-   //Centered
-   while(loop) {
-     
-     playButton.draw();
-     quitButton.draw();
-   }
-   
+   // Test drawing rudimentary buttons and the placements        
+   playButton.draw();
+   quitButton.draw();
 }
 
 void play() {
-  loop = false;
-  
- 
-}
-
-
+    background(0,0,255);
+    
+    // Main Game Code Goes Here
+    
+    
+    
+    
+    
+    
+} 
 
 void quit() {
   exit();
